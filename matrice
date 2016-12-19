@@ -42,6 +42,19 @@ public:
         }
         return T;
    }
+   
+   Matrix operator- (Matrix m2)
+    {
+        Matrix T(size);
+        for(int i = 0; i < size; i++)
+        {
+            for(int j = 0; j < size; j++)
+            {
+                T.v[i][j] = v[i][j] - m2.v[i][j];
+            }
+        }
+        return T;
+   }
 
     Matrix& operator* (const Matrix& T)
     {
@@ -84,6 +97,10 @@ public:
         Matrix b(x);
         b.citire();
         Matrix c(x);
+        Matrix d(x);
+        cout<<"Scaderea matricelor:"<<endl;
+        d=a-b;
+        d.afisare();
         cout<<"Suma matricelor: "<<endl;
         c=a+b;
         c.afisare();
